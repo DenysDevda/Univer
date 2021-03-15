@@ -1,0 +1,61 @@
+﻿@model Student
+@{ ViewBag.Title = "Student Details"; }
+
+
+<h2 align="center">@Model.LastName @Model.FirstName </h2>
+
+<div class="back"><strong>
+    @Html.ActionLink("Back", "Index")</strong>
+</div>
+
+<table border="2" align="center" class="tab">
+    <tr>
+       
+        <td><strong>Course name</strong></td>
+        <td><strong>Course number</strong></td>
+        <td align="center"><strong>Subject assessment</strong></td>
+    </tr>
+
+    <tr>
+        
+        <td>@Model.CourseName</td>
+        <td align="center">@Model.CourseNumber</td>
+        <td style="color:red">
+            @foreach (var subject in Model.Subjects)
+            {
+                @subject
+
+            }
+        </td>
+
+    </tr>
+
+
+</table>
+
+<br>
+
+<div>
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-default border border-dark c-light font-weight-bold" id="search" value="Add new subject" data-id="@Model.Id" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-default border border-dark c-light font-weight-bold" id="change" value="Change subject mark" data-id="@Model.Id" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-default border border-dark c-light font-weight-bold" id="remove" value="Remove subject" data-id="@Model.Id" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-default border border-dark c-light font-weight-bold" id="changecourse" value="Change course number" data-id="@Model.Id" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-default border border-dark c-light font-weight-bold" id="changecoursename" value="Change course name " data-id="@Model.Id" />
+    </div>
+
+</div>
+
