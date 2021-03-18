@@ -12,14 +12,12 @@ namespace University.Services
         public UniversityContext Db { get; set; }
         public List<Student> Students { get; set; }
     
-
         public StudentsService(UniversityContext db)
         {
             Db = db;
             Students = new List<Student>();
             
             GetStudents();
-           
         }
 
         private void GetStudents()
@@ -31,8 +29,6 @@ namespace University.Services
                 localStudent.Subjects = GetSubjects(student.Id);
 
                 Students.Add(localStudent);
-                
-
             }
         }
 
@@ -119,8 +115,6 @@ namespace University.Services
             }
             await Db.SaveChangesAsync();
         }
-
-  
 
         public async Task ChangeCourseNumber(Student student)
         {

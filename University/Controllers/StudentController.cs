@@ -18,12 +18,23 @@ namespace University.Controllers
         public IActionResult Index()
         {
             return View(_service.Students);
-
         }
         public IActionResult Details(Guid id)
         {
             var student = GetStudent(id);
             return View(student);
+        }
+        private Student GetStudent(Guid id)
+        {
+            Student res = new Student();
+            foreach (var student in _service.Students)
+            {
+                if (student.Id == id)
+                {
+                    res = student;
+                }
+            }
+            return res;
         }
 
         [HttpPost]
@@ -59,18 +70,6 @@ namespace University.Controllers
            await _service.RemoveSubject(subject);
         }
 
-        private Student GetStudent(Guid id)
-        {
-            Student res = new Student();
-            foreach (var student in _service.Students)
-            {
-                if (student.Id == id)
-                {
-                    res = student;
-                }
-            }
-            return res;
-        }
 
         [HttpPost]
         public async Task ChangeMark(SubjectDTO subject)

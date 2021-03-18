@@ -97,11 +97,11 @@ table {
     font-size: 20px;
     background-color: white;
     border: 3px solid darkmagenta;
-    table-layout:fixed;
+    
 }
 
 td {
-    padding: 100px;
+    padding: 20px;
 }
 
 .form-group {
@@ -127,4 +127,10 @@ td {
 }
 .aspir:before {
     content: url("asp.jpg");
+}
+.prof{
+    padding-left: 120px;
+}
+.tl {
+    background-color: darkturquoise;
 }

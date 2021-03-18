@@ -168,24 +168,201 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $("#addteacher").on('click', function () {
-        var firstname = prompt("Add Firstname");
-        var lastname = prompt("Add Lastname");
-        var subject = prompt("Add Subject");
+    $("#addprofessor").on('click', function () {
+        var firstname = prompt("Add first name");
+        var lastname = prompt("Add last name");
+        var coursename = prompt("Add course name")
+        var coursenumber = prompt("Add course number")
+        var subjectname = prompt("Add subject name")
+        var bribeprice = prompt("Add Bribe Price")
         $.ajax({
             url: '/Teacher/AddNewTeacher',
             data: {
                 FirstName: firstname,
                 LastName: lastname,
-                Subject: subject
+                TeachersType: "Professor",
+                CourseName: coursename,
+                CourseNumber: coursenumber,
+                SubjectName: subjectname,
+                BribePrice: bribeprice
             },
             type: 'POST',
             success: function () {
-                alert("Teacher added successfully!")
+                alert("Professor added successfully!")
             },
             error: function () {
-                alert("Teacher not added,try again!")
+                alert("Professor not added,try again!")
             }
         });
     });
 });
+
+$(document).ready(function () {
+    $("#removeprofessor").on('click', function () {
+        var id = prompt("Add id");
+
+        $.ajax({
+            url: '/Teacher/RemoveTeacher',
+            data: {
+                teacherid: id
+            },
+            type: 'POST',
+            success: function () {
+                alert("Professor remove successfully!")
+            },
+            error: function () {
+                +
+                    alert("Professor not remove,try again!")
+            }
+        });
+    });
+});
+
+$(document).ready(function () {
+    $("#addcandidat").on('click', function () {
+        var firstname = prompt("Add Firstname");
+        var lastname = prompt("Add Lastname");
+        var coursename = prompt("Add course name")
+        var coursenumber = prompt("Add course number")
+        var subjectname = prompt("Add subject name")
+        var bribeprice = prompt("Add Bribe Price")
+        $.ajax({
+            url: '/Teacher/AddNewTeacher',
+            data: {
+                FirstName: firstname,
+                LastName: lastname,
+                TeachersType: "Science Candidate",
+                CourseName: coursename,
+                CourseNumber: coursenumber,
+                SubjectName: subjectname,
+                BribePrice: bribeprice
+            },
+            type: 'POST',
+            success: function () {
+                alert("Science Candidate added successfully!")
+            },
+            error: function () {
+                alert("Science Candidate not added,try again!")
+            }
+        });
+    });
+});
+
+$(document).ready(function () {
+    $("#removecandidat").on('click', function () {
+        var id = prompt("Add id");
+
+        $.ajax({
+            url: '/Teacher/RemoveTeacher',
+            data: {
+                teacherid: id
+            },
+            type: 'POST',
+            success: function () {
+                alert("Science Cadidate remove successfully!")
+            },
+            error: function () {
+                +
+                    alert("Science Cadidate not remove,try again!")
+            }
+        });
+    });
+});
+
+$(document).ready(function () {
+    $("#addaspirant").on('click', function () {
+        var firstname = prompt("Add Firstname");
+        var lastname = prompt("Add Lastname");
+        var coursename = prompt("Add course name")
+        var coursenumber = prompt("Add course number")
+        var subjectname = prompt("Add subject name")
+        var bribeprice = prompt("Add Bribe Price")
+        $.ajax({
+            url: '/Teacher/AddNewTeacher',
+            data: {
+                FirstName: firstname,
+                LastName: lastname,
+                TeachersType: "Aspirant",
+                CourseName: coursename,
+                CourseNumber: coursenumber,
+                SubjectName: subjectname,
+                BribePrice: bribeprice
+            },
+            type: 'POST',
+            success: function () {
+                alert("Aspirant added successfully!")
+            },
+            error: function () {
+                alert("Aspirant not added,try again!")
+            }
+        });
+    });
+});
+
+$(document).ready(function () {
+    $("#removeaspirant").on('click', function () {
+        var id = prompt("Add id");
+
+        $.ajax({
+            url: '/Teacher/RemoveTeacher',
+            data: {
+                teacherid: id
+            },
+            type: 'POST',
+            success: function () {
+                alert("Aspirant remove successfully!")
+            },
+            error: function () {
+                +
+                    alert("Aspirant not remove,try again!")
+            }
+        });
+    });
+});
+
+$(document).ready(function () {
+
+    $("#pchangecoursename").on('click', function () {
+        var coursename = prompt("Enter course name");
+        var id = $(this).data("id");
+        $.ajax({
+            url: '/Teacher/ChangeCourseName',
+            data: {
+                CourseName: coursename,
+                id: id
+            },
+            type: 'POST',
+            success: function () {
+                alert("Course name changed successfully!")
+            },
+            error: function () {
+                alert("Course name not changed,try again!")
+            }
+        });
+    });
+
+});
+
+$(document).ready(function () {
+
+    $("#changecoursenumber").on('click', function () {
+        var coursenumber = prompt("Enter course number");
+        var id = $(this).data("id");
+        $.ajax({
+            url: '/Teacher/ChangeCourseNumber',
+            data: {
+                CourseNumber: coursenumber,
+                id: id
+            },
+            type: 'POST',
+            success: function () {
+                alert("Course changed successfully!")
+            },
+            error: function () {
+                alert("Course not changed,try again!")
+            }
+        });
+    });
+
+});
+

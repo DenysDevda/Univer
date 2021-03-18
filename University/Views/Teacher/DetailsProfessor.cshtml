@@ -1,0 +1,45 @@
+﻿@model Teacher
+@{ ViewBag.Title = "Professor Details"; }
+
+<h2 align="center">@Model.LastName @Model.FirstName </h2>
+
+<div class="back">
+    <strong>
+        @Html.ActionLink("Back", "Professors")
+    </strong>
+</div>
+
+<table border="2" align="center">
+    <tr>
+
+        <td><strong>What course name he teaches</strong></td>
+        <td><strong>What course number he teaches</strong></td>
+        <td><strong>What subject he teaches</strong></td>
+        <td><strong>Bribe Price</strong></td>
+
+    </tr>
+
+    <tr>
+
+        <td>@Model.CourseName</td>
+        <td>@Model.CourseNumber</td>
+        <td>@Model.SubjectName</td>
+        <td>@Model.BribePrice</td>
+
+    </tr>
+
+</table>
+
+<br>
+
+<div>
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-default border border-dark c-light font-weight-bold" id="pchangecoursename" value="Change course name" data-id="@Model.Id" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-default border border-dark c-light font-weight-bold" id="changecoursenumber" value="Change course number" data-id="@Model.Id" />
+    </div>
+
+</div>

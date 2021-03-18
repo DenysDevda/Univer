@@ -1,0 +1,36 @@
+﻿@model Teacher
+@{ ViewBag.Title = "Aspirant Details"; }
+
+
+<h2 align="center">@Model.LastName @Model.FirstName </h2>
+
+<div class="back">
+    <strong>
+        @Html.ActionLink("Back", "Aspirants")
+    </strong>
+</div>
+
+<table border="2" align="center">
+    <tr>
+
+        <td><strong>What course name he teaches</strong></td>
+        <td><strong>What course number he teaches</strong></td>
+        <td><strong>What subject he teaches</strong></td>
+        <td><strong>Bribe Price</strong></td>
+
+    </tr>
+
+    <tr>
+
+        <td>@Model.CourseName</td>
+        <td>@Model.CourseNumber</td>
+        <td>@Model.SubjectName</td>
+        <td>@Model.BribePrice</td>
+
+    </tr>
+
+</table>
+
+<br>
+
+

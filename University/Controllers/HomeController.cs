@@ -1,5 +1,4 @@
-﻿
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using University.Models;
@@ -12,7 +11,6 @@ namespace University.Controllers
 
         public HomeController(ILogger<HomeController> logger)
         {
-
             _loggers = logger;
         }
 

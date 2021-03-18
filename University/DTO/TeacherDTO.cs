@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 
 namespace University.DTO
@@ -11,6 +8,10 @@ namespace University.DTO
         public Guid Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Subject { get; set; }
+        public string TeachersType { get; set; }
+        public string CourseName { get; set; }
+        public int? CourseNumber { get; set; }
+        public string SubjectName { get; set; }
+        public int? BribePrice { get; set; }
     }
 }

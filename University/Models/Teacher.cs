@@ -1,20 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using University.DTO;
 
 namespace University.Models
 {
     public class Teacher
     {
-        public const int price = 300;
-        public const int progIng = 100;
-
         public Guid Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Subject { get; set; }
+        public string TeachersType { get; set; }
+        public int? BribePrice { get; set; }
+        public string CourseName { get; set; }
+        public int? CourseNumber { get; set; }
+        public string SubjectName { get; set; }
+        
 
         public static Teacher FromDto(TeacherDTO dto)
         {
@@ -23,22 +22,14 @@ namespace University.Models
                 Id = dto.Id,
                 FirstName = dto.FirstName,
                 LastName = dto.LastName,
-                Subject = dto.FirstName,
-               
+                TeachersType = dto.TeachersType,
+                BribePrice = dto.BribePrice,
+                CourseName = dto.CourseName,
+                CourseNumber = dto.CourseNumber,
+                SubjectName = dto.SubjectName
             };
 
             return teacher;
-        }
-
-        public virtual int PaidExam(Course course)
-        {
-            int sum = (price * course.CourseNumber);
-
-            if (course.CourseName == "Programing engeeniring")
-            {
-                sum += progIng;
-            }
-            return sum;
         }
     }
 }
